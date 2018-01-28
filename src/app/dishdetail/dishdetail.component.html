@@ -27,6 +27,9 @@
       </md-card>
     </div>   
 </div>
+<div [hidden]="dish">
+    <md-spinner></md-spinner><h4>Loading . . . Please Wait</h4>
+</div>
 
   <div fxFlex="40">          
         <md-list *ngIf="dish">         
@@ -39,5 +42,8 @@
               </p>
             </md-list-item> 
           </md-list>      
+  </div>
+  <div [hidden]="dish">
+      <md-spinner></md-spinner><h4>Loading . . . Please Wait</h4>
   </div>
 </div>
