@@ -6,7 +6,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
+import { RestangularModule, Restangular } from 'ngx-restangular';
 
 import 'hammerjs';
 import { AppComponent } from './app.component';
@@ -22,10 +22,12 @@ import { LoginComponent } from './login/login.component';
 import { DishService } from './services/dish.service';
 import { PromotionService } from './services/promotion.service';
 import { LeaderService } from './services/leader.service';
+import { ProcessHttpMsgService } from './services/process-http-msg.service';
+import { RestangularConfigFactory } from './shared/restConfig';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { baseURL } from './shared/baseurl';
-import { ProcessHttpMsgService } from './services/process-http-msg.service';
+
 
 
 
@@ -49,7 +51,8 @@ import { ProcessHttpMsgService } from './services/process-http-msg.service';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    RestangularModule.forRoot(RestangularConfigFactory)
   ],
   entryComponents: [
     LoginComponent
